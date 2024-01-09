@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- 既存のヘッダー情報... -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <h2>トレーニング分析</h2>
+
+    <!-- ドロップダウンメニューの追加 -->
+    <select id="exercise-select">
+        <option value="all">すべて</option>
+        <option value="BP">ベンチプレス</option>
+        <option value="SQ">スクワット</option>
+        <option value="DL">デッドリフト</option>
+    </select>
+
+    <!-- グラフを表示するためのCanvas -->
+    <canvas id="trainingChart"></canvas>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var trainingData = {{ data|tojson }};
+            var selectElement = document.getElementById('exercise-select');
+
+            // ドロップダウンの変更時にグラフを更新
+            selectElement.addEventListener('change', function() {
+                updateChart(trainingData, this.value);
+            });
+
+            // 初期表示時のグラフを描画
+            updateChart(trainingData, selectElement.value);
+        });
+
+        function updateChart(trainingData, selectedExercise) {
+            var ctx = document.getElementById('trainingChart').getContext('2d');
+            if (window.myChart) {
+                window.myChart.destroy();
+            }
+
+            var labels = Object.keys(trainingData);
+            var datasets = [];
+
+            if (selectedExercise === 'all') {
+                // すべてのトレーニングデータを表示
+                var exercises = ['BP', 'SQ', 'DL'];
+                exercises.forEach(function(exercise) {
+                    var data = labels.map(function(label) {
+                        return trainingData[label][exercise] || 0;
+                    });
+
+                    var color = getColorForExercise(exercise);
+
+                    var dataSet = {
+                        label: exercise,
+                        data: data,
+                        backgroundColor: color,
+                        borderColor: color,
+                        borderWidth: 1
+                    };
+
+                    datasets.push(dataSet);
+                });
+            } else {
+                // 選択されたトレーニングデータのみ表示
+                var data = labels.map(function(label) {
+                    return trainingData[label][selectedExercise] || 0;
+                });
+
+                var color = getColorForExercise(selectedExercise);
+
+                var dataSet = {
+                    label: selectedExercise,
+                    data: data,
+                    backgroundColor: color,
+                    borderColor: color,
+                    borderWidth: 1
+                };
+
+                datasets.push(dataSet);
+            }
+
+            window.myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: datasets
+                },
+                options: {
+                    // オプション設定...
+                }
+            });
+        }
+
+        function getColorForExercise(exercise) {
+            // 種目に応じて色を指定
+            if (exercise === 'BP') {
+                return 'rgba(0, 123, 255, 0.5)'; // ベンチプレスの色
+            } else if (exercise === 'SQ') {
+                return 'rgba(255, 0, 0, 0.5)'; // スクワットの色
+            } else if (exercise === 'DL') {
+                return 'rgba(0, 255, 0, 0.5)'; // デッドリフトの色
+            } else {
+                return 'rgba(0, 0, 0, 0.5)'; // その他の種目の色
+            }
+        }
+    </script>
+
+    <!-- その他のHTML要素... -->
+
+    <a href="/home" class="btn btn-secondary">ホームに戻る</a>
+</body>
+</html>

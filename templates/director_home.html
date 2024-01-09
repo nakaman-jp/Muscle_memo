@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Director Home</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>全ユーザーのトレーニング記録</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Date</th>
+                    <th>Exercise</th>
+                    <th>Weight</th>
+                    <th>Reps</th>
+                    <th>Sets</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in records %}
+                <tr>
+                    <td>{{ record.user_id }}</td>
+                    <td>{{ record.date }}</td>
+                    <td>{{ record.exercise }}</td>
+                    <td>{{ record.weight }}</td>
+                    <td>{{ record.rep }}</td>
+                    <td>{{ record.set }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

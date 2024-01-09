@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ホーム</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="page-title">ホーム</h2>
+        <p class="welcome-message">ようこそ {{ username }} さん</p>
+        <div class="latest-record">
+            <h3>最新のトレーニング記録</h3>
+            <p><strong>日付:</strong> {{ latest_record[2] }}</p>
+            <p><strong>種目:</strong> {{ latest_record[3] }}</p>
+            <p><strong>重さ:</strong> {{ latest_record[4] }}</p>
+            <p><strong>回数:</strong> {{ latest_record[5] }}</p>
+            <p><strong>セット数:</strong> {{ latest_record[6] }}</p>
+        </div>
+        <div class="action-buttons">
+            <a href="/record" class="btn btn-action btn-record">記録する</a>
+            <a href="/analyze" class="btn btn-action btn-analyze">分析を見る</a>
+        </div>
+        <a href="/login" class="btn btn-secondary">ログインに戻る</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,252 @@
+body {
+    font-family: 'Roboto', 'Open Sans', sans-serif;
+    background: linear-gradient(to bottom, #ADD8E6 0%, #ffffff 100%);
+    color: #333;
+    line-height: 1.6;
+}
+
+.navbar {
+    background-color: #1E90FF;
+    overflow: hidden;
+}
+
+.nav-link {
+    float: left;
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    background-color: #4682B4;
+    color: white;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.form-control {
+    width: 90%;
+    padding: 15px;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    width: 90%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #32CD32;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #228B22;
+}
+.register-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.register-title {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.register-form .form-group {
+    margin-bottom: 15px;
+}
+
+.register-form .form-control {
+    width: 90%;
+    padding: 15px;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.register-form .btn-primary {
+    width: 90%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #32CD32;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.register-form .btn-primary:hover {
+    background-color: #228B22;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.btn-action {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.btn-record {
+    background-color: #3498db;
+}
+
+.btn-analyze {
+    background-color: #4CAF50;
+}
+
+.btn-action:hover {
+    filter: brightness(0.9);
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: #555;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.btn-secondary:hover {
+    background-color: #333;
+}
+/* styles.css */
+
+/* 新しいデザインスタイル */
+body {
+    font-family: 'Roboto', 'Open Sans', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.latest-record {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+.latest-record h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.latest-record p {
+    font-size: 1.2rem;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-action {
+    background-color: #3498db;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.btn-action:hover {
+    background-color: #2874a6;
+}
+
+.btn-record {
+    background-color: #4CAF50;
+}
+
+.btn-analyze {
+    background-color: #e67e22;
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: #555;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.btn-secondary:hover {
+    background-color: #333;
+}
+.welcome-message {
+    font-size: 2rem;
+    color: #FF0000; /* 赤色 */
+    font-weight: bold; /* 太字 */
+    text-transform: uppercase; /* テキストを大文字に変換 */
+    letter-spacing: 2px; /* 文字間隔を広げる */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* テキストに影を追加 */
+}
